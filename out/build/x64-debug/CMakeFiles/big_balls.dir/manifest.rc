@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "D:/cpp_programs/1_course_2_semester_cpp/big_balls/out/build/x64-debug/CMakeFiles/big_balls.dir/embed.manifest"

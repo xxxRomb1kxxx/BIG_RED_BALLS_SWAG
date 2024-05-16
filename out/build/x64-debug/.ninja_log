@@ -1,0 +1,10 @@
+# ninja log v5
+2	895	7375898489717013	CMakeFiles/big_balls.dir/big_balls.cpp.obj	a40085e5c5dc6e84
+896	1594	7375898496031629	big_balls.exe	61443a10e1feea71
+2	15	0	clean	94eb5120419ed6fe
+12	1310	7375919124345310	CMakeFiles/big_balls.dir/big_balls.cpp.obj	a40085e5c5dc6e84
+1311	1754	7375919127858894	big_balls.exe	61443a10e1feea71
+3	870	7375920137268066	CMakeFiles/big_balls.dir/big_balls.cpp.obj	a40085e5c5dc6e84
+872	1152	7375920139263696	big_balls.exe	61443a10e1feea71
+24	1108	7375920520022235	CMakeFiles/big_balls.dir/big_balls.cpp.obj	a40085e5c5dc6e84
+1109	1502	7375920523178124	big_balls.exe	61443a10e1feea71
