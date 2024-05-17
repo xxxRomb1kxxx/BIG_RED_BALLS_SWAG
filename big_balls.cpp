@@ -1,25 +1,26 @@
-﻿#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include <vector>
 #include <iostream>
-
+#define g 90.81
+#define damping 0.8
+#define air_resistance 0.1
 class Ball {
+private:
+    float v;
+    float r;
+    float initial_x;
+    float initial_y;
 public:
     sf::CircleShape shape;
-    float v;
-    float g;
-    float damping;
-    float air_resistance;
-
-    Ball(float r, float initial_x, float initial_y, float g, float damping, float air_resistance) : v(0), g(g), damping(damping), air_resistance(air_resistance) {
+    Ball(float r, float initial_x, float initial_y) : v(0), r(r), initial_x(initial_x), initial_y(initial_y) {
         shape.setRadius(r);
         shape.setOrigin(sf::Vector2f(r, r));
         shape.setPosition(initial_x, initial_y);
         shape.setFillColor(sf::Color::Red);
-
     }
     void update(float t, float ground_level) {
-        float a = g - (air_resistance * v  /*(1/shape.getRadius())*/);
-        v += g * t;
+        float a = g - (air_resistance * v);
+        v += a * t;
         shape.move(0, v * t);
 
         if (shape.getPosition().y + shape.getRadius() >= ground_level) {
@@ -33,9 +34,9 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(1920, 1080), "Big Balls");
     std::vector<Ball> balls;
 
-    balls.emplace_back(50.f, 500.f, 100.f, 90.8f, 0.7f, 0.1f);
-    balls.emplace_back(100.f, 1000.f, 100.f, 90.8f, 0.8f, 0.1f);
-    balls.emplace_back(150.f, 1500.f, 100.f, 90.8f, 0.9f, 0.1f);
+    balls.emplace_back(50.f, 500.f, 100.f);
+    balls.emplace_back(100.f, 1000.f, 100.f);
+    balls.emplace_back(150.f, 1500.f, 100.f);
     sf::RectangleShape ground(sf::Vector2f(1920, 300));
     ground.setPosition(0, 780);
     ground.setFillColor(sf::Color::Green);
